@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qls-maxcut"
+version = "0.1.0"
+description = "MSc AI project experiments for QAOA-assisted local search on Max-Cut."
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib==3.11.1",
+    "networkx==3.6.1",
+    "qiskit==2.5.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "-p no:cacheprovider"
